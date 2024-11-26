@@ -62,7 +62,7 @@
 
         <a-col :span="3">
           <div class="reset" @click="reset">重置</div>
-          <div class="submit" @click="submit">提交验证</div>
+          <div class="submit" @click="submit">提交</div>
         </a-col>
       </a-row>
 

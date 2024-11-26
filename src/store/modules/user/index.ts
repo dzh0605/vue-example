@@ -62,7 +62,8 @@ const useUserStore = defineStore('user', {
     },
 
     // Login
-    async login(loginForm: LoginData) {
+    // async login(loginForm: LoginData) {
+    async login() {
       setToken('hello');
       // try {
       //   const data = {...loginForm, identity:`${loginForm.identity}`}

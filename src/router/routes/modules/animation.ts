@@ -9,7 +9,7 @@ const DASHBOARD: AppRouteRecordRaw = {
     locale: '动画',
     requiresAuth: true,
     icon: 'icon-unordered-list',
-    order: 0,
+    order: 1,
   },
   children: [
     {

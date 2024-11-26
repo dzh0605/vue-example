@@ -1,74 +1,266 @@
 <template>
   <div class="container">
-    <LoginBanner />
-    <div class="content">
-      <div class="content-inner">
-        <LoginForm />
+    <div class="img-view">
+      <div class="img-box">
+        <div class="move-box">
+          <div class="img img-url_1"></div>
+          <div class="img img-url_2"></div>
+          <div class="img img-url_3"></div>
+          <div class="img img-url_4"></div>
+          <div class="img img-url_5"></div>
+          <div class="img img-url_1"></div>
+        </div>
+
       </div>
-      <!-- <div class="footer">
-        <Footer />
-      </div> -->
     </div>
+
+    <div class="main">
+      <div class="main-box">
+        <div class="main-avatar"></div>
+        <div class="text" @click="goto">ding</div>
+        <div class="line"></div>
+        <div class="maxim">『七情拆解，无非心印；六欲所指，皆由心生。』</div>
+
+        <div class="btn-box">
+          <div class="btn">Let's go!</div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </template>
 
 <script lang="ts" setup>
-  import Footer from '@/components/footer/index.vue';
-  import LoginBanner from './components/banner.vue';
-  import LoginForm from './components/login-form.vue';
+import { useUserStore } from '@/store';
+import { useRouter } from 'vue-router';
+import { ref } from 'vue';
+
+const userStore = useUserStore();
+const router = useRouter();
+
+const goto = async () => {
+  await userStore.login();
+  router.push({
+    name: 'shops',
+  });
+  // Message.success('登录成功');
+}
+
 </script>
 
 <style lang="less" scoped>
-  .container {
-    display: flex;
+.container {
+  display: flex;
+  height: 100vh;
+
+  .img-view {
+    width: 100%;
     height: 100vh;
+    overflow: hidden;
 
-    .banner {
-      width: 550px;
-      background: linear-gradient(163.85deg, #1d2129 0%, #00308f 100%);
-    }
-
-    .content {
+    .img-box {
+      width: 600%;
+      height: 100vh;
       position: relative;
-      display: flex;
-      flex: 1;
-      align-items: center;
-      justify-content: center;
-      padding-bottom: 40px;
-    }
+      animation: identifier 30s linear infinite;
 
-    .footer {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      width: 100%;
+      .move-box {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-wrap: nowrap;
+        position: absolute;
+
+
+        .img-url_1 {
+          background-image: url('./img/bj_1.png');
+        }
+
+        .img-url_2 {
+          background-image: url('./img/bj_2.png');
+        }
+
+        .img-url_3 {
+          background-image: url('./img/bj_3.png');
+        }
+
+        .img-url_4 {
+          background-image: url('./img/bj_4.png');
+        }
+
+        .img-url_5 {
+          background-image: url('./img/bj_5.png');
+        }
+
+        .img {
+          width: 100%;
+          height: 100vh;
+          background-size: cover;
+          background-position: center;
+        }
+      }
+
     }
   }
 
-  .logo {
-    position: fixed;
-    top: 24px;
-    left: 22px;
-    z-index: 1;
-    display: inline-flex;
+  .main {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.2);
+    /* 半透明背景色 */
+    backdrop-filter: blur(5px);
+    /* 模糊效果 */
+    z-index: 100;
+    display: flex;
+    justify-content: center;
     align-items: center;
 
-    &-text {
-      margin-right: 4px;
-      margin-left: 4px;
-      color: var(--color-fill-1);
-      font-size: 20px;
-    }
-  }
-</style>
+    .main-box {
+      width: 500px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
-<style lang="less" scoped>
-  // responsive
-  @media (max-width: @screen-lg) {
-    .container {
-      .banner {
-        width: 25%;
+      .main-avatar {
+        width: 104px;
+        height: 104px;
+        border-radius: 52px;
+        border: 2px solid rgb(var(--gray-3));
+
+        background-image: url('./img/avatar.png');
+        background-position: center;
+        background-size: cover;
       }
+
+      .text {
+        font-size: 26px;
+        color: rgb(var(--gray-1));
+        margin: 20px 0;
+
+        cursor: pointer;
+      }
+
+      .line {
+        width: 400px;
+        height: 1px;
+        background: linear-gradient(to right, rgb(var(--gray-5)), rgb(var(--gray-1)), rgb(var(--gray-5)));
+      }
+
+      .maxim {
+        font-size: 16px;
+        color: rgb(var(--gray-1));
+        margin: 20px 0;
+      }
+
+      .btn-box {
+        width: 250px;
+        height: 60px;
+        margin-top: 50px;
+
+        .btn {
+          width: 250px;
+          height: 60px;
+          position: absolute;
+          z-index: 100;
+
+          cursor: pointer;
+          user-select: none;
+
+          font-size: 26px;
+          font-weight: bold;
+          color: rgb(var(--gray-1));
+          text-align: center;
+          line-height: 60px;
+
+          background: linear-gradient(90deg, rgb(var(--blue-1)), rgb(var(--red-1)), rgb(var(--blue-1)));
+          // 写在下面才能生效
+          background-size: 400%;
+          border-radius: 30px;
+
+          animation: bj 18s linear infinite;
+
+          opacity: 0.5;
+        }
+
+        .btn::before {
+          content: "";
+          position: absolute;
+          left: -5px;
+          right: -5px;
+          top: -5px;
+          bottom: -5px;
+
+          background: linear-gradient(90deg, blue, red, blue, red, blue);
+          animation: bj 18s linear infinite;
+
+          // 写在下面才能生效
+          background-size: 400%;
+          border-radius: 30px;
+          filter: blur(10px);
+          z-index: -1;
+        }
+
+      }
+
     }
   }
+}
+
+@keyframes identifier {
+  0% {
+    right: 0%;
+  }
+
+  2% {
+    right: 100%;
+  }
+
+  20% {
+    right: 100%;
+  }
+
+  22% {
+    right: 200%;
+  }
+
+  40% {
+    right: 200%;
+  }
+
+  42% {
+    right: 300%;
+  }
+
+  60% {
+    right: 300%;
+  }
+
+  62% {
+    right: 400%;
+  }
+
+  80% {
+    right: 400%;
+  }
+
+  82% {
+    right: 500%;
+  }
+
+  100% {
+    right: 500%;
+  }
+}
+
+@keyframes bj {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: -400% 0;
+  }
+}
 </style>
