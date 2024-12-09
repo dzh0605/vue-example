@@ -3,7 +3,8 @@
     <Breadcrumb :items="['波浪效果', '方形波浪']" />
 
     <a-card class="text">
-      波浪效果一般由首尾相连的动画生成，下面是一个简单的方形波浪效果
+      <p>波浪效果一般由首尾相连的动画或者旋转的椭圆生成</p>
+      <p>下面是一个简单的方形波浪效果，使用首尾相连的动画生成</p>
     </a-card>
 
     <a-card class="general-card">
@@ -13,7 +14,6 @@
             <div class="box-4"></div>
             <div class="box-4"></div>
           </div>
-
         </div>
       </div>
     </a-card>
@@ -48,7 +48,6 @@
         width: 300px;
         height: 300px;
         overflow: hidden;
-
         position: relative;
 
         .box-3 {

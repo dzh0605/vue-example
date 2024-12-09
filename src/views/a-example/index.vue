@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Breadcrumb :items="['aaaaa']" />
+    <Breadcrumb :items="['aaaaa', 'aaaaa']" />
 
     <a-card class="text">
       示例

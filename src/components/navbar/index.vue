@@ -17,8 +17,8 @@
     <ul class="right-side">
       <li>
         <a-tooltip :content="theme === 'light'
-            ? '点击切换为暗黑模式'
-            : '点击切换为亮色模式'
+          ? '点击切换为暗黑模式'
+          : '点击切换为亮色模式'
           ">
           <a-button class="nav-btn" type="outline" :shape="'circle'" @click="handleToggleTheme">
             <template #icon>
@@ -30,8 +30,8 @@
       </li>
       <li>
         <a-tooltip :content="isFullscreen
-            ? '点击退出全屏模式'
-            : '点击切换全屏模式'
+          ? '点击退出全屏模式'
+          : '点击切换全屏模式'
           ">
           <a-button class="nav-btn" type="outline" :shape="'circle'" @click="toggleFullScreen">
             <template #icon>
@@ -58,15 +58,15 @@
       <li>
         <a-dropdown trigger="click">
           <a-avatar :size="32" :style="{ marginRight: '8px', cursor: 'pointer' }">
-            <!-- <img alt="avatar" :src="avatar" /> -->
-            <img alt="avatar" />
+            <img alt="avatar" src="./avatar.png" />
+            <!-- <img alt="avatar" /> -->
           </a-avatar>
           <template #content>
             <a-doption>
               <a-space @click="handleLogout">
                 <icon-export />
                 <span>
-                  退出登录
+                  回到主页
                 </span>
               </a-space>
             </a-doption>

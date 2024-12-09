@@ -10,15 +10,18 @@
       <div class="btn">
         <div class="up" @click="up">上升</div>
         <div class="down" @click="down">下降</div>
+        <div class="numShow">{{ `${numShow + 50}%` }}</div>
       </div>
 
       <div class="box-1">
         <div class="box-2">
-          <div class="box-3">
-            <div class="box-4"></div>
-            <div class="box-4"></div>
+          <div ref="moveBox" class="box-3">
+            <div class="box-4">
+              <div class="box-5"></div>
+              <div class="box-5"></div>
+            </div>
+            <div class="box-6"></div>
           </div>
-
         </div>
       </div>
     </a-card>
@@ -27,7 +30,36 @@
 </template>
 
 <script setup>
+import { Message } from '@arco-design/web-vue';
+import { ref } from 'vue';
 
+// 盒子标记
+const moveBox = ref()
+
+// 百分比显示
+const numShow = ref(0)
+
+// 上升
+const up = () => {
+  if(numShow.value < 50){
+    numShow.value += 10
+    moveBox.value.style.bottom = numShow.value / 5 * 18 + "px"
+
+  }else{
+    Message.warning("已达最大值")
+  }
+}
+
+// 下降
+const down = () => {
+  if(numShow.value > -50){
+    numShow.value -= 10
+    moveBox.value.style.bottom = numShow.value / 5 * 18 + "px"
+
+  }else{
+    Message.warning("已达最小值")
+  }
+}
 </script>
 
 <style scoped lang="less">
@@ -70,6 +102,17 @@
         border-radius: 20px;
         user-select: none;
         cursor: pointer;
+        margin-right: 20px;
+      }
+
+      .numShow {
+        width: 100px;
+        height: 40px;
+        border: 2px solid rgb(var(--purple-2));
+        font-size: 18px;
+        text-align: center;
+        line-height: 36px;
+        border-radius: 20px;
       }
     }
 
@@ -91,16 +134,26 @@
         .box-3 {
           width: 1200px;
           height: 300px;
-          display: flex;
           position: absolute;
           animation: move 1.5s linear infinite;
 
           .box-4 {
+            display: flex;
+          }
+
+          .box-5 {
             width: 600px;
             height: 300px;
             background-image: url("../img/wave_1.png");
             background-size: 100% 100%;
           }
+
+          .box-6 {
+            width: 1200px;
+            height: 300px;
+            background-color: #2196f3;
+          }
+
         }
 
         @keyframes move {

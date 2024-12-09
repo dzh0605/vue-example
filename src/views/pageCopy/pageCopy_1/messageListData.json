@@ -1,0 +1,78 @@
+[
+    {
+        "name": "绯红女王",
+        "leftUrl": "./img/messageList_1.jpg",
+        "rightUrl": "./img/avatar.jpg",
+        "message": [
+            {
+                "direction": "left",
+                "content": "摇晃的红酒杯",
+                "time": "12:00"
+            },
+            {
+                "direction": "right",
+                "content": "嘴唇像染着鲜血",
+                "time": "12:00"
+            },
+            {
+                "direction": "left",
+                "content": "那不寻常的美",
+                "time": "12:00"
+            },
+            {
+                "direction": "right",
+                "content": "难赦免的罪",
+                "time": "12:00"
+            }
+        ]
+    },
+    {
+        "name": "龙傲天",
+        "leftUrl": "./img/messageList_2.jpg",
+        "rightUrl": "./img/avatar.jpg",
+        "message": [
+            {
+                "direction": "left",
+                "content": "仙之巅，傲世间，有我安澜便有天。",
+                "time": "11:00"
+            },
+            {
+                "direction": "right",
+                "content": "赤锋矛，不朽盾，斩尽仙王灭九天！",
+                "time": "11:00"
+            },
+            {
+                "direction": "left",
+                "content": "手握日月摘星辰，世间无我这般人。",
+                "time": "11:00"
+            },
+            {
+                "direction": "right",
+                "content": "待到阴阳逆乱时，以我魔血染苍天。",
+                "time": "11:00"
+            },
+            {
+                "direction": "left",
+                "content": "天不生我李淳罡，剑道万古如长夜。",
+                "time": "11:00"
+            },
+            {
+                "direction": "right",
+                "content": "仙路尽头谁为峰，一见无始道成空。",
+                "time": "11:00"
+            }
+        ]
+    },
+    {
+        "name": "秦始皇",
+        "leftUrl": "./img/messageList_3.jpg",
+        "rightUrl": "./img/avatar.jpg",
+        "message": [
+            {
+                "direction": "left",
+                "content": "我，秦始皇，打钱！",
+                "time": "10:00"
+            }
+        ]
+    }
+]

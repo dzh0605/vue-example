@@ -72,6 +72,66 @@ const DASHBOARD: AppRouteRecordRaw = {
         roles: ['*']
       }
     },
+    {
+      path: 'vue_draggable_6',
+      name: 'vue_draggable_6',
+      component: () => import('@/views/draggable/vue_draggable_6/index.vue'),
+      meta: {
+        locale: '克隆拖拽（vue.draggable.next）',
+        requiresAuth: true,
+        roles: ['*']
+      }
+    },
+    {
+      path: 'vue_draggable_7',
+      name: 'vue_draggable_7',
+      component: () => import('@/views/draggable/vue_draggable_7/index.vue'),
+      meta: {
+        locale: '组间拖拽限制（vue.draggable.next）',
+        requiresAuth: true,
+        roles: ['*']
+      }
+    },
+    {
+      path: 'vue_draggable_8',
+      name: 'vue_draggable_8',
+      component: () => import('@/views/draggable/vue_draggable_8/index.vue'),
+      meta: {
+        locale: '拖拽数量限制（vue.draggable.next）',
+        requiresAuth: true,
+        roles: ['*']
+      }
+    },
+    {
+      path: 'vue_draggable_9',
+      name: 'vue_draggable_9',
+      component: () => import('@/views/draggable/vue_draggable_9/index.vue'),
+      meta: {
+        locale: '禁止拖拽排序（vue.draggable.next）',
+        requiresAuth: true,
+        roles: ['*']
+      }
+    },
+    {
+      path: 'vue_draggable_10',
+      name: 'vue_draggable_10',
+      component: () => import('@/views/draggable/vue_draggable_10/index.vue'),
+      meta: {
+        locale: '拖拽锚点（vue.draggable.next）',
+        requiresAuth: true,
+        roles: ['*']
+      }
+    },
+    {
+      path: 'vue_draggable_11',
+      name: 'vue_draggable_11',
+      component: () => import('@/views/draggable/vue_draggable_11/index.vue'),
+      meta: {
+        locale: '树形拖拽（vue.draggable.next）',
+        requiresAuth: true,
+        roles: ['*']
+      }
+    },
   ]
 };
 

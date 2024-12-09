@@ -42,6 +42,16 @@ const DASHBOARD: AppRouteRecordRaw = {
         roles: ['*']
       }
     },
+    {
+      path: 'wave_4',
+      name: 'wave_4',
+      component: () => import('@/views/wave/wave_4/index.vue'),
+      meta: {
+        locale: '多层可升降波浪',
+        requiresAuth: true,
+        roles: ['*']
+      }
+    },
   ]
 };
 

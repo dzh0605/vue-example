@@ -22,7 +22,7 @@
         <div class="maxim">『七情拆解，无非心印；六欲所指，皆由心生。』</div>
 
         <div class="btn-box">
-          <div class="btn">Let's go!</div>
+          <div class="btn" @click="goto">Let's go!</div>
         </div>
       </div>
     </div>
@@ -73,23 +73,23 @@ const goto = async () => {
 
 
         .img-url_1 {
-          background-image: url('./img/bj_1.png');
+          background-image: url('./img/bj_1.jpg');
         }
 
         .img-url_2 {
-          background-image: url('./img/bj_2.png');
+          background-image: url('./img/bj_2.jpg');
         }
 
         .img-url_3 {
-          background-image: url('./img/bj_3.png');
+          background-image: url('./img/bj_3.jpg');
         }
 
         .img-url_4 {
-          background-image: url('./img/bj_4.png');
+          background-image: url('./img/bj_4.jpg');
         }
 
         .img-url_5 {
-          background-image: url('./img/bj_5.png');
+          background-image: url('./img/bj_5.jpg');
         }
 
         .img {
@@ -107,10 +107,10 @@ const goto = async () => {
     width: 100%;
     height: 100vh;
     position: absolute;
-    background: rgba(255, 255, 255, 0.2);
     /* 半透明背景色 */
-    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.2);
     /* 模糊效果 */
+    backdrop-filter: blur(5px);
     z-index: 100;
     display: flex;
     justify-content: center;
@@ -174,30 +174,35 @@ const goto = async () => {
           text-align: center;
           line-height: 60px;
 
-          background: linear-gradient(90deg, rgb(var(--blue-1)), rgb(var(--red-1)), rgb(var(--blue-1)));
+          background: linear-gradient(90deg, rgb(var(--orange-5)), rgb(var(--blue-5)), rgb(var(--orange-5)));
           // 写在下面才能生效
           background-size: 400%;
           border-radius: 30px;
 
           animation: bj 18s linear infinite;
-
-          opacity: 0.5;
+          opacity: 0.7;
         }
 
+        // 创建一个伪元素作为该元素的第一个子元素
         .btn::before {
+          // 子元素的内容为空
           content: "";
+
+          // 将元素向外扩展
           position: absolute;
           left: -5px;
           right: -5px;
           top: -5px;
           bottom: -5px;
 
-          background: linear-gradient(90deg, blue, red, blue, red, blue);
+          background: linear-gradient(90deg, rgb(var(--orange-5)), rgb(var(--blue-5)), rgb(var(--orange-5)));
           animation: bj 18s linear infinite;
 
           // 写在下面才能生效
           background-size: 400%;
           border-radius: 30px;
+
+          // 给元素添加图像效果，blur为模糊
           filter: blur(10px);
           z-index: -1;
         }

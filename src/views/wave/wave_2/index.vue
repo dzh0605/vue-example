@@ -50,7 +50,6 @@
         height: 300px;
         border-radius: 150px;
         overflow: hidden;
-
         position: relative;
 
         .box-3 {
